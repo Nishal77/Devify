@@ -1,26 +1,194 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand colors */
+  --blue-primary: #1400FF;
+  --blue-hover: #0F00CC;
+  --text-primary: #0A0A0A;
+  --text-secondary: #6B6B6B;
+  --text-muted: #9A9A9A;
+  --bg-white: #ffffff;
+  --bg-card: #F2F2F2;
+  --bg-card-hover: #EBEBEB;
+  --border-light: #E5E5E5;
+
+  /* Hero gradient colors */
+  --hero-bg-start: #EAE4F5;
+  --hero-bg-mid: #F3EFF9;
+  --hero-bg-end: #ffffff;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: var(--bg-white);
+  --color-foreground: var(--text-primary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Hero gradient background */
+.hero-gradient {
+  background: radial-gradient(
+    ellipse 80% 80% at 30% 40%,
+    #DDD5F0 0%,
+    #E8E2F5 20%,
+    #F0ECFA 40%,
+    #F8F6FD 60%,
+    #ffffff 80%
+  );
+}
+
+/* Subtle grid overlay for hero */
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(120, 100, 180, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 100, 180, 0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Blue highlight text */
+.text-blue-accent {
+  color: var(--blue-primary);
+}
+
+/* Animated counter */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.6s ease-out forwards;
+}
+
+.animate-fade-up-delay-1 {
+  animation: fadeUp 0.6s ease-out 0.1s both;
+}
+
+.animate-fade-up-delay-2 {
+  animation: fadeUp 0.6s ease-out 0.2s both;
+}
+
+.animate-fade-up-delay-3 {
+  animation: fadeUp 0.6s ease-out 0.3s both;
+}
+
+/* Hover card lift */
+.card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Blue button styles */
+.btn-blue {
+  background-color: var(--blue-primary);
+  color: #ffffff;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-blue:hover {
+  background-color: var(--blue-hover);
+  transform: translateY(-1px);
+}
+
+/* Pill nav container */
+.nav-pill {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 9999px;
+}
+
+/* Section dot label */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
+}
+
+.section-label::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--blue-primary);
+}
+
+/* Client card logo area */
+.logo-container {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Service card watermark number */
+.card-number {
+  font-size: 80px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.06);
+  line-height: 1;
+  user-select: none;
+}
+
+/* Scrollbar hide */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Smooth link transitions */
+a {
+  transition: opacity 0.15s ease;
+}
+
+/* Tag pill */
+.tag-pill {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 9999px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
 }
