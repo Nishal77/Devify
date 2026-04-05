@@ -1,7 +1,86 @@
 @import "tailwindcss";
 
+/* ─── Switzer Font Face ─────────────────────────────────────────────────── */
+@font-face {
+  font-family: 'Switzer';
+  src: url('/fonts/switzer/Switzer-Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Switzer';
+  src: url('/fonts/switzer/Switzer-Extralight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Switzer';
+  src: url('/fonts/switzer/Switzer-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Switzer';
+  src: url('/fonts/switzer/Switzer-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Switzer';
+  src: url('/fonts/switzer/Switzer-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Switzer';
+  src: url('/fonts/switzer/Switzer-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Switzer';
+  src: url('/fonts/switzer/Switzer-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Switzer';
+  src: url('/fonts/switzer/Switzer-Extrabold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Switzer';
+  src: url('/fonts/switzer/Switzer-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Switzer';
+  src: url('/fonts/switzer/Switzer-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Switzer';
+  src: url('/fonts/switzer/Switzer-MediumItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ─── Design Tokens ─────────────────────────────────────────────────────── */
 :root {
-  /* Brand colors */
   --blue-primary: #1400FF;
   --blue-hover: #0F00CC;
   --text-primary: #0A0A0A;
@@ -11,18 +90,12 @@
   --bg-card: #F2F2F2;
   --bg-card-hover: #EBEBEB;
   --border-light: #E5E5E5;
-
-  /* Hero gradient colors */
-  --hero-bg-start: #EAE4F5;
-  --hero-bg-mid: #F3EFF9;
-  --hero-bg-end: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--bg-white);
   --color-foreground: var(--text-primary);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: 'Switzer', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 * {
@@ -36,99 +109,98 @@ html {
 body {
   background: var(--bg-white);
   color: var(--text-primary);
-  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: 'Switzer', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
-/* Hero gradient background */
+/* ─── Hero Gradient — Warm Orange ───────────────────────────────────────── */
 .hero-gradient {
-  background: radial-gradient(
-    ellipse 80% 80% at 30% 40%,
-    #DDD5F0 0%,
-    #E8E2F5 20%,
-    #F0ECFA 40%,
-    #F8F6FD 60%,
-    #ffffff 80%
-  );
+  background:
+    radial-gradient(ellipse 65% 75% at 12% 30%, rgba(255, 148, 60, 0.42) 0%, transparent 58%),
+    radial-gradient(ellipse 50% 60% at 55% 70%, rgba(255, 195, 100, 0.18) 0%, transparent 52%),
+    radial-gradient(ellipse 40% 50% at 85% 20%, rgba(255, 210, 140, 0.12) 0%, transparent 50%),
+    linear-gradient(148deg, #FFF0D9 0%, #FFF7EC 32%, #FFFAF3 58%, #FFFDF9 78%, #FFFFFF 100%);
 }
 
-/* Subtle grid overlay for hero */
-.hero-grid {
-  background-image:
-    linear-gradient(rgba(120, 100, 180, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(120, 100, 180, 0.06) 1px, transparent 1px);
-  background-size: 60px 60px;
+/* ─── Marquee animations ─────────────────────────────────────────────────── */
+@keyframes marquee-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }
 
-/* Blue highlight text */
-.text-blue-accent {
-  color: var(--blue-primary);
+.marquee-left {
+  display: flex;
+  width: max-content;
+  animation: marquee-left 28s linear infinite;
+  will-change: transform;
+}
+.marquee-right {
+  display: flex;
+  width: max-content;
+  animation: marquee-right 22s linear infinite;
+  will-change: transform;
+}
+.marquee-left:hover,
+.marquee-right:hover {
+  animation-play-state: paused;
 }
 
-/* Animated counter */
+/* ─── Animations ─────────────────────────────────────────────────────────── */
 @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-6px); }
 }
 
-.animate-fade-up {
-  animation: fadeUp 0.6s ease-out forwards;
-}
+.animate-fade-up        { animation: fadeUp 0.65s ease-out both; }
+.animate-fade-up-delay-1 { animation: fadeUp 0.65s ease-out 0.1s both; }
+.animate-fade-up-delay-2 { animation: fadeUp 0.65s ease-out 0.2s both; }
+.animate-fade-up-delay-3 { animation: fadeUp 0.65s ease-out 0.35s both; }
+.animate-float           { animation: floatY 4s ease-in-out infinite; }
 
-.animate-fade-up-delay-1 {
-  animation: fadeUp 0.6s ease-out 0.1s both;
-}
-
-.animate-fade-up-delay-2 {
-  animation: fadeUp 0.6s ease-out 0.2s both;
-}
-
-.animate-fade-up-delay-3 {
-  animation: fadeUp 0.6s ease-out 0.3s both;
-}
-
-/* Hover card lift */
+/* ─── Card hover lift ────────────────────────────────────────────────────── */
 .card-hover {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-
 .card-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.09);
 }
 
-/* Blue button styles */
+/* ─── Blue button ────────────────────────────────────────────────────────── */
 .btn-blue {
   background-color: var(--blue-primary);
   color: #ffffff;
   border-radius: 9999px;
-  font-weight: 500;
-  transition: background-color 0.2s ease, transform 0.15s ease;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
 }
-
 .btn-blue:hover {
   background-color: var(--blue-hover);
   transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(20, 0, 255, 0.3);
 }
 
-/* Pill nav container */
+/* ─── Pill nav ───────────────────────────────────────────────────────────── */
 .nav-pill {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 0, 0, 0.07);
   border-radius: 9999px;
 }
 
-/* Section dot label */
+/* ─── Section dot label ──────────────────────────────────────────────────── */
 .section-label {
   display: inline-flex;
   align-items: center;
@@ -138,7 +210,6 @@ body {
   color: var(--text-primary);
   letter-spacing: 0.01em;
 }
-
 .section-label::before {
   content: "";
   display: inline-block;
@@ -146,9 +217,10 @@ body {
   height: 6px;
   border-radius: 50%;
   background-color: var(--blue-primary);
+  flex-shrink: 0;
 }
 
-/* Client card logo area */
+/* ─── Logo container ─────────────────────────────────────────────────────── */
 .logo-container {
   background: #ffffff;
   border-radius: 16px;
@@ -158,31 +230,16 @@ body {
   justify-content: center;
 }
 
-/* Service card watermark number */
+/* ─── Service card watermark ─────────────────────────────────────────────── */
 .card-number {
   font-size: 80px;
   font-weight: 700;
-  color: rgba(0, 0, 0, 0.06);
+  color: rgba(0, 0, 0, 0.05);
   line-height: 1;
   user-select: none;
 }
 
-/* Scrollbar hide */
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-/* Smooth link transitions */
-a {
-  transition: opacity 0.15s ease;
-}
-
-/* Tag pill */
+/* ─── Tag pill ───────────────────────────────────────────────────────────── */
 .tag-pill {
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -191,4 +248,19 @@ a {
   font-size: 12px;
   font-weight: 500;
   color: var(--text-primary);
+}
+
+/* ─── Scrollbar hide ─────────────────────────────────────────────────────── */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ─── Smooth links ───────────────────────────────────────────────────────── */
+a { transition: opacity 0.15s ease; }
+
+/* ─── Showcase card glow ─────────────────────────────────────────────────── */
+.showcase-glow {
+  box-shadow:
+    0 40px 80px rgba(20, 0, 255, 0.12),
+    0 8px 24px rgba(0, 0, 0, 0.12),
+    0 0 0 1px rgba(255, 255, 255, 0.3);
 }

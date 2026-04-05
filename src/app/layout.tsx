@@ -1,71 +1,60 @@
 import type { Metadata, Viewport } from "next";
-import { Geist } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
-});
-
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://devify.agency";
-const siteName = "Devify®";
+const siteName = "Devify Labs";
 const siteDescription =
-  "Smart Digital Marketing that turns strategy into growth. We combine strategy, creativity, and performance marketing to help digital brands grow, compete, and scale with confidence.";
+  "Devify Labs is a full-service digital studio — UI/UX design, high-performance web development, and brand strategy built for startups, SaaS companies, and ambitious businesses ready to scale.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${siteName} — Smart Digital Marketing Agency`,
+    default: `${siteName} — Digital Studio for Startups & SaaS`,
     template: `%s | ${siteName}`,
   },
   description: siteDescription,
   keywords: [
-    "digital marketing agency",
-    "SEO services",
-    "content marketing",
-    "social media marketing",
-    "performance marketing",
+    "digital studio",
+    "UI UX design",
+    "web development",
+    "SaaS design",
+    "startup branding",
     "brand strategy",
-    "web design",
-    "growth marketing",
-    "digital agency",
-    "marketing strategy",
-    "online marketing",
-    "PPC advertising",
-    "email marketing",
+    "Next.js development",
+    "product design",
+    "digital agency India",
+    "web design agency",
+    "full stack development",
     "conversion optimization",
+    "landing page design",
+    "growth marketing",
   ],
   authors: [{ name: siteName, url: siteUrl }],
   creator: siteName,
   publisher: siteName,
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
+  formatDetection: { email: false, address: false, telephone: false },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: siteUrl,
     siteName,
-    title: `${siteName} — Smart Digital Marketing Agency`,
+    title: `${siteName} — Digital Studio for Startups & SaaS`,
     description: siteDescription,
     images: [
       {
         url: `${siteUrl}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: `${siteName} — Smart Digital Marketing`,
+        alt: `${siteName} — Digital Studio`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteName} — Smart Digital Marketing Agency`,
+    title: `${siteName} — Digital Studio for Startups & SaaS`,
     description: siteDescription,
     images: [`${siteUrl}/og-image.jpg`],
-    creator: "@devifyagency",
+    creator: "@devifylabs",
   },
   robots: {
     index: true,
@@ -78,10 +67,8 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  alternates: {
-    canonical: siteUrl,
-  },
-  category: "marketing",
+  alternates: { canonical: siteUrl },
+  category: "technology",
 };
 
 export const viewport: Viewport = {
@@ -93,54 +80,44 @@ export const viewport: Viewport = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "MarketingAgency",
+  "@type": "ProfessionalService",
   name: siteName,
   url: siteUrl,
   logo: `${siteUrl}/logo.svg`,
   description: siteDescription,
-  foundingDate: "2020",
-  numberOfEmployees: {
-    "@type": "QuantitativeValue",
-    value: 25,
-  },
+  foundingDate: "2022",
+  address: { "@type": "PostalAddress", addressCountry: "IN" },
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "4.9",
-    ratingCount: "600",
+    ratingCount: "120",
     bestRating: "5",
   },
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer service",
-    email: "hello@devify.agency",
+    email: "hello@devifylabs.com",
     availableLanguage: "English",
   },
   sameAs: [
-    "https://twitter.com/devifyagency",
-    "https://linkedin.com/company/devify",
-    "https://instagram.com/devifyagency",
+    "https://twitter.com/devifylabs",
+    "https://linkedin.com/company/devifylabs",
+    "https://instagram.com/devifylabs",
   ],
-  offers: {
-    "@type": "AggregateOffer",
-    description: "Digital marketing services including SEO, content marketing, social media, and performance marketing",
-    seller: { "@type": "Organization", name: siteName },
-  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${geistSans.variable}`}>
+    <html lang="en">
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="antialiased">{children}</body>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }
