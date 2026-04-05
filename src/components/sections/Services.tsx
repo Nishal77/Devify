@@ -60,14 +60,14 @@ export default function Services() {
             <p className="section-label mb-5">Services</p>
             <h2
               id="services-heading"
-              className="text-[52px] md:text-[60px] lg:text-[64px] font-bold leading-[1.05] tracking-[-0.03em] text-[#0A0A0A] max-w-[520px]"
+              className="text-[32px] md:text-[42px] lg:text-[48px] font-semibold leading-[1.05] tracking-[-0.03em] text-[#0A0A0A] max-w-[420px]"
             >
               Everything you need to grow.
             </h2>
           </div>
 
           <div className="flex flex-col items-start lg:items-end gap-5 lg:pt-20">
-            <p className="text-[16px] leading-[1.6] text-[#6B6B6B] max-w-[380px] lg:text-right">
+            <p className="text-[16px] leading-[1.6] text-[#6B6B6B] max-w-[580px] lg:text-right">
               From strategy to execution, we offer a full suite of marketing
               services designed to grow your brand, reach your audience, and
               drive real results.

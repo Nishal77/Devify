@@ -38,14 +38,14 @@ export default function Collaborations() {
     >
       <div className="max-w-[1400px] mx-auto px-6">
         {/* Centered Header Section */}
-        <div className="flex flex-col items-center mb-16 md:mb-20">
-          <p className="flex items-center text-[15px] font-medium text-black mb-4">
+        <div className="flex flex-col items-center mb-8">
+          <p className="flex items-center text-[15px] font-medium text-black mb-2">
             <span className="text-[#1400FF] text-xl leading-none mr-2">•</span>
             Collaborations
           </p>
           <h2
             id="collab-heading"
-            className="text-[44px] md:text-[56px] lg:text-[64px] font-semibold leading-[1.05] tracking-[-0.03em] text-[#0A0A0A] text-center"
+            className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-[1.05] tracking-[-0.03em] text-[#0A0A0A] text-center"
           >
             Trusted across industries.
           </h2>
