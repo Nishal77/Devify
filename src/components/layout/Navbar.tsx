@@ -1,11 +1,12 @@
 "use client";
 
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 const navLinks = [
-  { href: "/about", label: "About" },
-  { href: "/case-studies", label: "Case Studies" },
-  { href: "/services", label: "Services" },
+  { href: "/about", label: "Work" },
+  { href: "/case-studies", label: "Services" },
+  { href: "/services", label: "About" },
   { href: "/blog", label: "Blog" },
 ];
 
@@ -23,20 +24,23 @@ export default function Navbar() {
           className="flex items-center gap-2.5 flex-shrink-0 min-w-0"
           aria-label="Devify Labs home"
         >
-          <LogoIcon />
-          <span className="text-[15px] font-semibold text-[#0A0A0A] tracking-tight whitespace-nowrap">
+          {/* <LogoIcon /> */}
+          <span className="text-xl font-medium text-black tracking-tight whitespace-nowrap">
             Devify Labs
           </span>
         </Link>
 
         {/* ── Center: Nav pill — absolutely centred via justify-self ── */}
         <div className="justify-self-center hidden md:flex">
-          <div className="nav-pill px-2 py-1.5 flex items-center gap-0.5">
+          <div
+            className="rounded-full px-1.5 py-0 flex items-center gap-0.5 bg-gray-300/50 backdrop-blur-sm"
+            // style={{ boxShadow: "0 1px 3px rgba(0,0,0,0.07), inset 0 1px 0 rgba(255,255,255,0.9)" }}
+          >
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-4 py-2 text-[13.5px] font-medium text-[#0A0A0A] hover:text-[#1400FF] rounded-full hover:bg-white/60 transition-all duration-150 whitespace-nowrap"
+                className="px-5 py-2.5 text-[13.5px] font-medium text-[#0A0A0A] hover:text-[#1900FF] rounded-full hover:bg-white hover:shadow-sm transition-all duration-150 whitespace-nowrap"
               >
                 {link.label}
               </Link>
@@ -48,9 +52,16 @@ export default function Navbar() {
         <div className="flex justify-end items-center gap-3">
           <Link
             href="/contact"
-            className="btn-blue px-5 py-2.5 text-[13.5px] font-semibold hidden md:inline-flex items-center"
+            className="hidden md:inline-flex items-center px-5 py-2.5 text-[13.5px] font-medium text-white rounded-full bg-[#1900FF] "
           >
-            Contact Us
+
+{/* bg-gradient-to-r from-[#1E3AFF] to-[#4F8CFF] 
+    backdrop-blur-md border border-white/10 
+    shadow-[0_8px_30px_rgba(30,58,255,0.35)] 
+    hover:shadow-[0_10px_40px_rgba(30,58,255,0.45)] 
+    transition-all duration-300" */}
+            Book a Call
+            <ArrowUpRight size={16} className="ml-2" />
           </Link>
 
           {/* Mobile hamburger */}

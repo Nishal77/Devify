@@ -116,13 +116,13 @@ body {
   overflow-x: hidden;
 }
 
-/* ─── Hero Gradient — Warm Orange ───────────────────────────────────────── */
+/* ─── Hero Gradient — Premium Blue ──────────────────────────────────────── */
 .hero-gradient {
   background:
-    radial-gradient(ellipse 65% 75% at 12% 30%, rgba(255, 148, 60, 0.42) 0%, transparent 58%),
-    radial-gradient(ellipse 50% 60% at 55% 70%, rgba(255, 195, 100, 0.18) 0%, transparent 52%),
-    radial-gradient(ellipse 40% 50% at 85% 20%, rgba(255, 210, 140, 0.12) 0%, transparent 50%),
-    linear-gradient(148deg, #FFF0D9 0%, #FFF7EC 32%, #FFFAF3 58%, #FFFDF9 78%, #FFFFFF 100%);
+    radial-gradient(ellipse 68% 80% at 8% 22%, rgba(37, 99, 235, 0.46) 0%, transparent 58%),
+    radial-gradient(ellipse 48% 58% at 62% 78%, rgba(99, 102, 241, 0.22) 0%, transparent 52%),
+    radial-gradient(ellipse 40% 52% at 90% 12%, rgba(147, 197, 253, 0.28) 0%, transparent 50%),
+    linear-gradient(148deg, #DBEAFE 0%, #EEF2FF 28%, #F0F9FF 56%, #F8FAFF 76%, #FFFFFF 100%);
 }
 
 /* ─── Marquee animations ─────────────────────────────────────────────────── */
