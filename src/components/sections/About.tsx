@@ -28,7 +28,7 @@ export default function About() {
         <div className="w-full lg:w-[180px] shrink-0 mt-2">
           <p className="flex items-center text-[14px] font-medium text-black">
             <span className="text-[#1400FF] text-[18px] leading-none mr-2 mt-[-1px]">•</span>
-            About Devify®
+            About Devify Labs
           </p>
         </div>
 

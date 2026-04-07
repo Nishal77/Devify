@@ -4,10 +4,12 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 const navLinks = [
-  { href: "/about", label: "Work" },
-  { href: "/case-studies", label: "Services" },
-  { href: "/services", label: "About" },
-  { href: "/blog", label: "Blog" },
+  { href: "/about",  label: "About" },
+  { href: "/products",     label: "Our Products" },
+  { href: "/services",     label: "Services" },
+  { href: "/work",         label: "Work" },
+  { href: "/blog",         label: "Blog" },
+
 ];
 
 export default function Navbar() {
@@ -26,7 +28,7 @@ export default function Navbar() {
         >
           {/* <LogoIcon /> */}
           <span className="text-xl font-medium text-black tracking-tight whitespace-nowrap">
-            Devify Labs
+            {/* Devify Labs */} coreship.dev
           </span>
         </Link>
 
@@ -40,7 +42,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-5 py-2.5 text-[13.5px] font-medium text-[#0A0A0A] hover:text-[#1900FF] rounded-full hover:bg-white hover:shadow-sm transition-all duration-150 whitespace-nowrap"
+                className="px-5 py-2.5 text-[13.5px] font-medium text-black hover:text-[#1900FF] "
               >
                 {link.label}
               </Link>
