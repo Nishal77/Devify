@@ -21,16 +21,17 @@ export default function Navbar() {
         aria-label="Main navigation"
       >
         {/* ── Left: Logo + wordmark ── */}
-        <Link
-          href="/"
-          className="flex items-center gap-2.5 flex-shrink-0 min-w-0"
-          aria-label="Devify Labs home"
-        >
-          {/* <LogoIcon /> */}
-          <span className="text-xl font-medium text-black tracking-tight whitespace-nowrap">
-            {/* Devify Labs */} coreship.dev
-          </span>
-        </Link>
+<Link
+  href="/"
+  className="flex items-center gap-2.5 flex-shrink-0 min-w-0"
+  aria-label="Devify Labs home"
+>
+  <img 
+    src="/DevifyLabs_Logo.png" 
+    alt="Logo"
+    className="h-8 w-auto brightness-0" 
+  />
+</Link>
 
         {/* ── Center: Nav pill — absolutely centred via justify-self ── */}
         <div className="justify-self-center hidden md:flex">
@@ -54,7 +55,7 @@ export default function Navbar() {
         <div className="flex justify-end items-center gap-3">
           <Link
             href="/contact"
-            className="hidden md:inline-flex items-center px-5 py-2.5 text-[13.5px] font-medium text-white rounded-full bg-[#1900FF] "
+            className="hidden md:inline-flex items-center px-5 py-2.5 text-[13.5px] font-medium text-white rounded-full bg-[#000] "
           >
 
 {/* bg-gradient-to-r from-[#1E3AFF] to-[#4F8CFF] 

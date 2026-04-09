@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 
@@ -93,7 +95,7 @@ export default function Hero() {
         {/* Main heading */}
         <h1 className="max-w-[1100px] text-3xl md:text-4xl lg:text-7xl font-medium leading-[1.06] tracking-[-0.03em] text-black mb-6">
           We Build{" "}
-          <span className="text-[#1900FF]"  
+          <span className="text-[#FF8C00]"  
             // style={{
             //   background: "linear-gradient(135deg, #1D4ED8 0%, #4F46E5 100%)",
             //   WebkitBackgroundClip: "text",
@@ -119,7 +121,7 @@ export default function Hero() {
             {/* Primary — rich blue gradient button */}
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-7 py-3.5 text-[15px] font-medium text-white rounded-full bg-[#1400FF] hover:bg-[#1400FF]/90"
+              className="inline-flex items-center gap-2 px-7 py-3.5 text-[15px] font-medium text-white rounded-full bg-[#000] hover:bg-[#1400FF]/90"
               // style={{
               //   background: "linear-gradient(135deg, #1D4ED8 0%, #4F46E5 100%)",
               //   boxShadow: "0 4px 20px rgba(29,78,216,0.35), 0 1px 3px rgba(29,78,216,0.2)",
@@ -176,35 +178,39 @@ export default function Hero() {
 
       {/* ── Clients marquee band ── */}
       <div className="relative z-10 flex-shrink-0 border-t border-black/10 border-dashed bg-white/40 backdrop-blur-sm">
-        <div className="flex items-stretch" style={{ height: "88px" }}>
-          {/* Left label */}
-          <div
-            className="flex-shrink-0 flex flex-col justify-center border-r border-black/10 border-dashed bg-white/60 px-8"
-            style={{ minWidth: "148px" }}
-            aria-label="Our clients"
-          >
-            <p className="text-[10px] font-semibold text-[#2563EB] uppercase tracking-[0.18em] mb-0.5 flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB] flex-shrink-0" />
-              OUR
-            </p>
-            <p className="text-[22px] font-bold text-[#0A0A0A] leading-none tracking-tight">
-              Clients
-            </p>
-          </div>
+        {/* Added wrapper with max-width and px-6 to match previous sections */}
+        <div className="max-w-[1400px] mx-auto px-6 w-full">
+          {/* Added border-x here to frame it nicely within the max-width */}
+          <div className="flex items-stretch border-x border-black/10 border-dashed" style={{ height: "88px" }}>
+            {/* Left label */}
+            <div
+              className="flex-shrink-0 flex flex-col justify-center border-r border-black/10 border-dashed bg-white/60 px-8"
+              style={{ minWidth: "148px" }}
+              aria-label="Our clients"
+            >
+              <p className="text-[10px] font-semibold text-[#2563EB] uppercase tracking-[0.18em] mb-0.5 flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB] flex-shrink-0" />
+                OUR
+              </p>
+              <p className="text-[22px] font-bold text-[#0A0A0A] leading-none tracking-tight">
+                Clients
+              </p>
+            </div>
 
-          {/* Marquee */}
-          <div className="flex-1 overflow-hidden" style={{ height: "88px" }} aria-hidden="true">
-            <div className="marquee-left h-full flex">
-              {marqueeItems.map((client, i) => (
-                <div
-                  key={i}
-                  className="flex-shrink-0 flex items-center border-r border-black/10 border-dashed px-8 h-full"
-                >
-                  <span className="text-[15px] font-medium text-black/70 whitespace-nowrap hover:text-[#0A0A0A] transition-colors duration-200 cursor-default">
-                    {client}
-                  </span>
-                </div>
-              ))}
+            {/* Marquee */}
+            <div className="flex-1 overflow-hidden" style={{ height: "88px" }} aria-hidden="true">
+              <div className="marquee-left h-full flex">
+                {marqueeItems.map((client, i) => (
+                  <div
+                    key={i}
+                    className="flex-shrink-0 flex items-center border-r border-black/10 border-dashed px-8 h-full"
+                  >
+                    <span className="text-[15px] font-medium text-black/70 whitespace-nowrap hover:text-[#0A0A0A] transition-colors duration-200 cursor-default">
+                      {client}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
