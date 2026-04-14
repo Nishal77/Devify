@@ -47,14 +47,15 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer
-      className="relative bg-[#0A0A0A] pt-16 pb-12 overflow-hidden font-sans"
-      aria-label="Site footer"
-    >
-      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
-        
-        {/* Top Centered Contact Button */}
-        <div className="flex justify-center mb-24">
+    <div className="px-4 pb-4 md:px-6 md:pb-6 lg:px-8 lg:pb-8 pt-10">
+      <footer
+        className="relative bg-[#0A0A0A] pt-16 pb-12 overflow-hidden font-sans rounded-3xl lg:rounded-[2.5rem]"
+        aria-label="Site footer"
+      >
+        <div className="max-w-[1400px] mx-auto px-6 md:px-8 relative z-10">
+          
+          {/* Top Centered Contact Button */}
+          <div className="flex justify-center mb-24">
           <Link
             href="/contact"
             className="group inline-flex items-center gap-2 bg-[#1400FF] text-white rounded-full pl-6 pr-2 py-2 text-[15px] font-semibold hover:bg-blue-700 transition-colors"
@@ -172,5 +173,6 @@ export default function Footer() {
         
       </div>
     </footer>
+    </div>
   );
 }

@@ -94,18 +94,7 @@ export default function Hero() {
 
         {/* Main heading */}
         <h1 className="max-w-[1100px] text-3xl md:text-4xl lg:text-7xl font-medium leading-[1.06] tracking-[-0.03em] text-black mb-6">
-          We Build{" "}
-          <span className="text-[#FF8C00]"  
-            // style={{
-            //   background: "linear-gradient(135deg, #1D4ED8 0%, #4F46E5 100%)",
-            //   WebkitBackgroundClip: "text",
-            //   WebkitTextFillColor: "transparent",
-            //   backgroundClip: "text",
-            // }}
-          >
-            Digital Products
-          </span>{" "}
-          That Win Clients, For Our Clients.
+          Not Just <span className="text-[#1900FF]">Another Design Agency</span> Creating Digital Ecosystem
         </h1>
 
         {/* Subtitle */}
