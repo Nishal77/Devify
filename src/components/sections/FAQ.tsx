@@ -131,29 +131,9 @@ export default function FAQ() {
                   >
                     <div className="overflow-hidden">
                       <div className="px-6 pb-8 md:px-8 md:pb-8 pt-0">
-                        <p className="text-[#6B6B6B] text-[15px] leading-[1.6] mb-6 pr-4">
+                        <p className="text-[#6B6B6B] text-[15px] leading-[1.6] pr-4">
                           {faq.answer}
                         </p>
-                        
-                        {/* Author Info */}
-                        <div className="pt-6 border-t border-black/5 flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-full overflow-hidden relative shadow-sm border border-black/5">
-                            <Image
-                              src={faq.authorImage}
-                              alt={faq.authorName}
-                              fill
-                              className="object-cover"
-                            />
-                          </div>
-                          <div className="flex flex-col">
-                            <span className="text-[11px] font-bold text-[#6B6B6B] uppercase tracking-wide">
-                              Answered by
-                            </span>
-                            <span className="text-[14px] font-semibold text-[#0A0A0A]">
-                              {faq.authorName}
-                            </span>
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </div>

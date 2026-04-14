@@ -26,10 +26,11 @@ export default function Navbar() {
   className="flex items-center gap-2.5 flex-shrink-0 min-w-0"
   aria-label="Devify Labs home"
 >
+  
   <img 
-    src="/DevifyLabs_Logo.png" 
+    src="/logo.png" 
     alt="Logo"
-    className="h-8 w-auto brightness-0" 
+    className="h-8 w-auto text-black" 
   />
 </Link>
 

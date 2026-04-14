@@ -42,7 +42,7 @@ export default function Blog() {
           <div>
             <div className="flex items-center gap-2 mb-6">
               <div className="w-1.5 h-1.5 rounded-full bg-[#1400FF]" />
-              <span className="text-[13px] font-bold tracking-wide text-[#0A0A0A] uppercase">
+              <span className="text-[13px] font-medium tracking-wide text-[#0A0A0A] uppercase">
                 Blog
               </span>
             </div>
