@@ -49,7 +49,7 @@ export default function Testimonials() {
           <div>
             <div className="flex items-center gap-2 mb-6">
               <div className="w-1.5 h-1.5 rounded-full bg-[#1400FF]" />
-              <span className="text-[13px] font-bold tracking-wide text-[#0A0A0A] uppercase">
+              <span className="text-[13px] font-medium tracking-wide text-[#0A0A0A] uppercase">
                 Testimonial
               </span>
             </div>
@@ -80,12 +80,12 @@ export default function Testimonials() {
           
           {/* Column 1: Main Stats Card */}
           <div className="flex flex-col h-full">
-            <div className="bg-white rounded-[20px] p-6 md:p-8 flex flex-col h-full overflow-hidden border border-black/[0.06] shadow-sm">
+            <div className="bg-white rounded-[20px] p-6 md:p-8 flex flex-col h-full overflow-hidden border border-black/[0.06]">
               
               {/* Top Section */}
               <div className="flex items-start justify-between gap-3 mb-16">
                 <div className="flex items-baseline">
-                  <span className="text-[52px] lg:text-[60px] font-bold tracking-tight text-[#0A0A0A] leading-[0.85]">
+                  <span className="text-[52px] lg:text-[60px] font-medium tracking-tight text-[#0A0A0A] leading-[0.85]">
                     4.9
                   </span>
                   <span className="text-[14px] text-[#6B6B6B] font-medium ml-1">
@@ -101,8 +101,8 @@ export default function Testimonials() {
               
               {/* Bottom Section */}
               <div className="mt-4">
-                <h3 className="font-bold text-[18px] tracking-[-0.02em] text-[#0A0A0A] mb-4 flex items-center">
-                  Devify<span className="text-[9px] align-top ml-[1px] text-[#6B6B6B]">®</span>
+                <h3 className="font-medium text-[18px] tracking-[-0.02em] text-[#0A0A0A] mb-4 flex items-center">
+                  Devify Labs
                 </h3>
                 
                 <div className="flex items-start xl:items-center gap-3 mb-6 xl:flex-row flex-col">
@@ -143,7 +143,7 @@ export default function Testimonials() {
           {/* Column 2 */}
           <div className="flex flex-col gap-3 h-full">
             {/* Author Card */}
-            <div className="bg-white rounded-[20px] p-4 px-5 flex items-center gap-3 border border-black/[0.06] shadow-sm">
+            <div className="bg-white rounded-[20px] p-4 px-5 flex items-center gap-3 border border-black/[0.06]">
               <img 
                 src="/images/faq/woman.png" 
                 alt="Sarah Carter" 
@@ -160,7 +160,7 @@ export default function Testimonials() {
             </div>
             
             {/* Testimonial Card */}
-            <div className="bg-white rounded-[20px] p-6 md:p-8 flex flex-col justify-between flex-1 border border-black/[0.06] shadow-sm">
+            <div className="bg-white rounded-[20px] p-6 md:p-8 flex flex-col justify-between flex-1 border border-black/[0.06]">
               <div className="flex justify-between items-start mb-6">
                 <Stars />
                 <PlusIcon />
@@ -176,7 +176,7 @@ export default function Testimonials() {
           {/* Column 3 */}
           <div className="flex flex-col gap-3 h-full">
             {/* Testimonial Card */}
-            <div className="bg-white rounded-[20px] p-6 md:p-8 flex flex-col justify-between flex-1 border border-black/[0.06] shadow-sm">
+            <div className="bg-white rounded-[20px] p-6 md:p-8 flex flex-col justify-between flex-1 border border-black/[0.06]">
               <p className="text-[16px] xl:text-[19px] font-medium text-[#0A0A0A] leading-[1.3] tracking-[-0.01em] mb-8">
                 A smooth process from start to finish. Highly professional team!
               </p>
@@ -187,7 +187,7 @@ export default function Testimonials() {
             </div>
             
             {/* Author Card */}
-            <div className="bg-white rounded-[20px] p-4 px-5 flex items-center gap-3 border border-black/[0.06] shadow-sm">
+            <div className="bg-white rounded-[20px] p-4 px-5 flex items-center gap-3 border border-black/[0.06]">
               <img 
                 src="/images/faq/man.png" 
                 alt="Emily Davis" 
@@ -207,7 +207,7 @@ export default function Testimonials() {
           {/* Column 4 */}
           <div className="flex flex-col gap-3 h-full">
             {/* Author Card */}
-            <div className="bg-white rounded-[20px] p-4 px-5 flex items-center gap-3 border border-black/[0.06] shadow-sm">
+            <div className="bg-white rounded-[20px] p-4 px-5 flex items-center gap-3 border border-black/[0.06]">
               <img 
                 src="/images/faq/woman.png" 
                 alt="Anna Martinez" 
@@ -224,7 +224,7 @@ export default function Testimonials() {
             </div>
             
             {/* Testimonial Card */}
-            <div className="bg-white rounded-[20px] p-6 md:p-8 flex flex-col justify-between flex-1 border border-black/[0.06] shadow-sm">
+            <div className="bg-white rounded-[20px] p-6 md:p-8 flex flex-col justify-between flex-1 border border-black/[0.06]">
               <div className="flex justify-between items-start mb-6">
                 <Stars />
                 <PlusIcon />
