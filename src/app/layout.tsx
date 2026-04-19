@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import LicenseGate from "@/components/LicenseGate";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://devify.agency";
 const siteName = "Devify Labs";
@@ -117,7 +118,9 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body suppressHydrationWarning>{children}</body>
+      <body suppressHydrationWarning>
+        <LicenseGate>{children}</LicenseGate>
+      </body>
     </html>
   );
 }

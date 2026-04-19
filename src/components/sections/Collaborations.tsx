@@ -1,31 +1,54 @@
+import React from 'react';
+import { Cloud, Shield, Cpu, Terminal } from "lucide-react";
+
 const clients = [
   {
-    category: "Man Lifestyle Brand",
-    duration: "Working for 6 years",
-    service: "360° marketing",
-    logo: <ArtistagtyLogo />,
-    logoLabel: "Artistagty",
+    category: "SaaS Infrastructure",
+    duration: "Working for 4 years",
+    service: "Cloud Architecture",
+    logo: (
+      <div className="flex items-center gap-2">
+        <Cloud className="w-6 h-6 text-[#0A0A0A]" strokeWidth={2} />
+        <span className="font-semibold text-[16px] text-[#0A0A0A] tracking-tight">CloudScale</span>
+      </div>
+    ),
+    logoLabel: "CloudScale",
   },
   {
-    category: "Beauty Brand",
-    duration: "Working for 1 years",
-    service: "Web Design",
-    logo: <BeautyLogo />,
-    logoLabel: "Bloom Beauty",
+    category: "Fintech Platform",
+    duration: "Working for 2 years",
+    service: "Security & API",
+    logo: (
+      <div className="flex items-center gap-2">
+        <Shield className="w-6 h-6 text-[#0A0A0A]" strokeWidth={2} />
+        <span className="font-semibold text-[16px] text-[#0A0A0A] tracking-tight">Vault Finance</span>
+      </div>
+    ),
+    logoLabel: "Vault Finance",
   },
   {
-    category: "Coffee Brand",
-    duration: "Working for 8 years",
-    service: "360° marketing",
-    logo: <CoffeeLogo />,
-    logoLabel: "Coffee Bloom",
+    category: "AI & Machine Learning",
+    duration: "Working for 1 year",
+    service: "Data Engineering",
+    logo: (
+      <div className="flex items-center gap-2">
+        <Cpu className="w-6 h-6 text-[#0A0A0A]" strokeWidth={2} />
+        <span className="font-semibold text-[16px] text-[#0A0A0A] tracking-tight">NeuroSync ML</span>
+      </div>
+    ),
+    logoLabel: "NeuroSync ML",
   },
   {
-    category: "Furniture Brand",
+    category: "Open Source DevTools",
     duration: "Working for 3 years",
-    service: "Web Optimization",
-    logo: <MinimalLogo />,
-    logoLabel: "Minimal Restaurant",
+    service: "Core Optimization",
+    logo: (
+      <div className="flex items-center gap-2">
+        <Terminal className="w-6 h-6 text-[#0A0A0A]" strokeWidth={2} />
+        <span className="font-semibold text-[16px] text-[#0A0A0A] tracking-tight">Terminal X</span>
+      </div>
+    ),
+    logoLabel: "Terminal X",
   },
 ];
 
@@ -90,79 +113,5 @@ export default function Collaborations() {
         </div>
       </div>
     </section>
-  );
-}
-
-/* SVG Logos — styled to closely match the uploaded design */
-function ArtistagtyLogo() {
-  return (
-    <svg viewBox="0 0 160 50" className="w-[120px] h-auto" xmlns="http://www.w3.org/2000/svg">
-      <g transform="translate(80, 20)">
-        {/* Line through circles */}
-        <line x1="-30" y1="0" x2="30" y2="0" stroke="#0A0A0A" strokeWidth="1" />
-        {/* Two intersecting shapes */}
-        <circle cx="-6" cy="0" r="12" fill="none" stroke="#0A0A0A" strokeWidth="1.5" />
-        <path d="M 6 12 A 12 12 0 0 0 6 -12 Z" fill="#0A0A0A" />
-      </g>
-      <text x="80" y="42" textAnchor="middle" fontFamily="serif" fontSize="10" fontWeight="400" fill="#0A0A0A" letterSpacing="1">
-        ARTISTAGTY
-      </text>
-    </svg>
-  );
-}
-
-function BeautyLogo() {
-  return (
-    <svg viewBox="0 0 160 50" className="w-[60px] h-auto" xmlns="http://www.w3.org/2000/svg">
-      <g transform="translate(80, 25)" fill="none" stroke="#0A0A0A" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M-10,-10 Q0,-2 10,-10 Q2,0 10,10 Q0,2 -10,10 Q-2,0 -10,-10 Z" />
-        <circle cx="0" cy="-14" r="1.5" fill="#0A0A0A" stroke="none"/>
-        <circle cx="0" cy="14" r="1.5" fill="#0A0A0A" stroke="none"/>
-        <circle cx="-14" cy="0" r="1.5" fill="#0A0A0A" stroke="none"/>
-        <circle cx="14" cy="0" r="1.5" fill="#0A0A0A" stroke="none"/>
-        <circle cx="0" cy="0" r="1.5" fill="#0A0A0A" stroke="none"/>
-      </g>
-    </svg>
-  );
-}
-
-function CoffeeLogo() {
-  return (
-    <svg viewBox="0 0 160 50" className="w-[120px] h-auto" xmlns="http://www.w3.org/2000/svg">
-      <g transform="translate(45, 12)">
-        {/* Leaves */}
-        <path d="M0,20 Q-15,15 -10,0 Q5,5 0,20 Z" fill="none" stroke="#0A0A0A" strokeWidth="2" />
-        <path d="M0,20 Q15,15 15,5 Q5,-5 0,20 Z" fill="none" stroke="#0A0A0A" strokeWidth="2" />
-        <line x1="0" y1="20" x2="0" y2="28" stroke="#0A0A0A" strokeWidth="2" />
-        <circle cx="18" cy="-2" r="2.5" fill="#0A0A0A" />
-      </g>
-      <text x="75" y="24" textAnchor="start" fontFamily="sans-serif" fontSize="16" fontWeight="700" fill="#0A0A0A">
-        coffee
-      </text>
-      <text x="75" y="40" textAnchor="start" fontFamily="sans-serif" fontSize="16" fontWeight="700" fill="#0A0A0A">
-        bloom
-      </text>
-    </svg>
-  );
-}
-
-function MinimalLogo() {
-  return (
-    <svg viewBox="0 0 160 50" className="w-[100px] h-auto" xmlns="http://www.w3.org/2000/svg">
-      <text x="80" y="28" textAnchor="middle" fontFamily="sans-serif" fontStyle="italic" fontSize="18" fontWeight="800" fill="#0A0A0A" letterSpacing="2">
-        MINIMAL
-      </text>
-      <text x="80" y="42" textAnchor="middle" fontFamily="sans-serif" fontSize="6" fontWeight="600" fill="#0A0A0A" letterSpacing="4">
-        RESTAURANT
-      </text>
-      {/* Stars/Dots above text */}
-      <g transform="translate(80, 12)">
-        {[-16, -8, 0, 8, 16].map((x, i) => (
-          <path key={i} d={`M${x},0 L${x+2},2 L${x+1},5 L${x-1},5 L${x-2},2 Z`} fill="#0A0A0A" />
-        ))}
-      </g>
-      {/* Underline */}
-      <path d="M20,32 Q80,30 140,32" fill="none" stroke="#0A0A0A" strokeWidth="1" />
-    </svg>
   );
 }
